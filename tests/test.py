@@ -14,7 +14,10 @@ def test():
         emb_dropout = 0.1
     )
 
-    img = torch.randn(1, 3, 256, 256)
+    img = torch.randn(2, 3, 256, 256)
 
     preds = v(img)
-    assert preds.shape == (1, 1000), 'correct logits outputted'
+    assert preds.shape == (2, 1000), 'correct logits outputted'
+
+if __name__ == '__main__':
+    test()
